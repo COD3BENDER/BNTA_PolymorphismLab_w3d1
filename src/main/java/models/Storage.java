@@ -1,3 +1,5 @@
+package models;
+
 import java.util.ArrayList;
 
 public class Storage {
@@ -9,6 +11,10 @@ public class Storage {
         this.totalRent = 0;
     }
 
+    public ArrayList<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
     public void addVehicle(Vehicle vehicle){
         vehicles.add(vehicle);
     }
@@ -18,8 +24,8 @@ public class Storage {
     }
 
     public void calculateRent(){
-        for (int i = 0; i < vehicles.size(); i++) {
-            totalRent+=(vehicles.get(i).getPrice() * 0.1); // rent is 10% of vehicle cost for example.
+        for (Vehicle vehicle : vehicles) {
+            this.totalRent += (vehicle.getPrice() * 0.1); // rent is 10% of vehicle cost for example.
         }
     }
 }

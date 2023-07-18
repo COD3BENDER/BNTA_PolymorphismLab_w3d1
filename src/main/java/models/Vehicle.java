@@ -1,4 +1,7 @@
+package models;
+
 public abstract class Vehicle {
+    protected String vehicleName;
     protected int numberOfWheels;
     protected int maximumOccupancy;
     protected String fuelType;
@@ -6,13 +9,28 @@ public abstract class Vehicle {
     protected boolean publicTravel;
     protected int price;
 
-    public Vehicle(int numberOfWheels, int maximumOccupancy, String fuelType,String travelType, boolean publicTravel, int price){
+    protected int topSpeed;
+
+    public Vehicle(String vehicleName,
+                   int numberOfWheels,
+                   int maximumOccupancy,
+                   String fuelType,
+                   String travelType,
+                   boolean publicTravel,
+                   int price, int topSpeed){
+
+        this.vehicleName = vehicleName;
         this.numberOfWheels = numberOfWheels;
         this.maximumOccupancy = maximumOccupancy;
         this.fuelType = fuelType;
         this.travelType = travelType;
         this.publicTravel = publicTravel;
         this.price = price;
+        this.topSpeed = topSpeed;
+    }
+
+    public String getVehicleName() {
+        return vehicleName;
     }
 
     public int getPrice() {
@@ -23,4 +41,5 @@ public abstract class Vehicle {
         return "This vehicle operates on: ";
 
     }
+    public abstract String topSpeed();
 }
