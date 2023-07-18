@@ -2,27 +2,38 @@ package models;
 
 import interfaces.ICost;
 
+import java.util.ArrayList;
+
 public class Garage implements ICost {
 
-    private Storage storedVehicles;
-    private String vehicleName;
+    private ArrayList<Vehicle> fixVehicles;
     private int partsCost;
-    private int totalCost;
 
-    public Garage(String vehicleName, int partsCost){
-        this.storedVehicles = new Storage();
-        this.vehicleName = vehicleName;
+    public Garage(int partsCost){
+        this.fixVehicles = new ArrayList<>();
         this.partsCost = partsCost;
-        this.totalCost = 0;
+    }
+
+    public ArrayList<Vehicle> getFixVehicles() {
+        return fixVehicles;
+    }
+
+    public void addFixVehicles(Storage fixVehicles, String VehicleName) {
+
+        for (int i = 0; i < fixVehicles.getVehicles().size(); i++) {
+            if (VehicleName.equals(fixVehicles.getVehicles().get(i).getVehicleName())) {
+                this.fixVehicles.add(fixVehicles.getVehicles().get(i));
+            }
+        }
     }
 
     public int totalCost(){
-        for (int i = 0; i < storedVehicles.getVehicles().size(); i++) {
-            if(storedVehicles.getVehicles().get(i).getVehicleName().equals(this.vehicleName)){
-               totalCost= (int) (storedVehicles.getVehicles().get(i).getPrice() * 0.1 + this.partsCost);
-            }
+        int totalCost = 0;
+        for (int i = 0; i < fixVehicles.size(); i++) {
+            totalCost += (((fixVehicles.get(i).getPrice() * 10)/100) + partsCost);
+
 
         }
-        return totalCost;
+        return totalCost ;
     }
 }

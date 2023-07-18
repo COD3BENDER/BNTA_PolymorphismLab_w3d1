@@ -7,7 +7,7 @@ public class Car extends Vehicle{
     private String carMake;
 
     public Car(int noOfDoors, boolean isConvertible, String carMake){
-        super("BMW",10,0,"Petrol","Land",false,5000, 210);
+        super("BMW M3",10,0,"Petrol","Land",false,50, 210);
         this.noOfDoors = noOfDoors;
         this.isConvertible = isConvertible;
         this.carMake = carMake;
@@ -27,6 +27,6 @@ public class Car extends Vehicle{
     }
 
     public String topSpeed(){
-        return "The" + this.vehicleName + "has a top speed of " + this.topSpeed + " mph";
+        return "The " + this.vehicleName + " has a top speed of " + this.topSpeed + " mph.";
     }
 }

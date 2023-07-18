@@ -15,6 +15,10 @@ public class Storage {
         return vehicles;
     }
 
+    public int getTotalRent() {
+        return totalRent;
+    }
+
     public void addVehicle(Vehicle vehicle){
         vehicles.add(vehicle);
     }
@@ -25,7 +29,7 @@ public class Storage {
 
     public void calculateRent(){
         for (Vehicle vehicle : vehicles) {
-            this.totalRent += (vehicle.getPrice() * 0.1); // rent is 10% of vehicle cost for example.
+            this.totalRent += (vehicle.getPrice() * 0.1);
         }
     }
 }

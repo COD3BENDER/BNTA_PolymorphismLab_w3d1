@@ -7,7 +7,7 @@ public class Plane extends Vehicle{
     private boolean supersonic;
 
     public Plane(int noOfWings, String serviceType, boolean supersonic){
-        super("Boeing 747",10,242,"Aviation fuel","Air",true, 200000, 1110);
+        super("Boeing 747",10,242,"Aviation fuel","Air",true, 200, 1110);
         this.noOfWings = noOfWings;
         this.serviceType = serviceType;
         this.supersonic = supersonic;
@@ -27,6 +27,6 @@ public class Plane extends Vehicle{
     }
 
     public String topSpeed(){
-        return "The" + this.vehicleName + "has a top speed of " + this.topSpeed + " Km/h";
+        return "The " + this.vehicleName + " has a top speed of " + this.topSpeed + " Km/h.";
     }
 }

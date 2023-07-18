@@ -6,18 +6,20 @@ public class Boat extends Vehicle{
     boolean hasEngine;
 
     public Boat(boolean hasSail, boolean hasEngine){
-        super("Atlantis",0,6,"Diesel","Sea",false,25000, 250);
+        super("Atlantis",0,6,"Diesel","Water",false,250, 250);
         this.hasSail = hasSail;
         this.hasEngine = hasEngine;
 
     }
     public String propulsionType(){
         if(this.hasSail && this.hasEngine){
-            return "The " + this.vehicleName + " has a both an engine and a sail.";
+            return "The " + this.vehicleName + " has both an Engine and a Sail.";
         }else if (this.hasEngine){
             return "The " + this.vehicleName + " has an Engine.";
+        }else if(this.hasSail){
+            return "The " + this.vehicleName + " has a Sail.";
         }else {
-            return "The " + this.vehicleName + " has a sail.";
+            return "The " + this.vehicleName + " has no Sail or Engine.";
         }
     }
 
@@ -27,6 +29,6 @@ public class Boat extends Vehicle{
     }
 
     public String topSpeed(){
-        return "The" + this.vehicleName + "has a top speed of " + this.topSpeed + " MPH";
+        return "The " + this.vehicleName + " has a top speed of " + this.topSpeed + " mph.";
     }
 }
